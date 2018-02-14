@@ -31,5 +31,5 @@ Line-us GCode commands use 'machine co-ordinates'. The origin point (0, 0) for t
 It should not be possible to send a GCode that overstretches the arm, or causes it to hit the body of Line-us. However, in firmware 1.0.1 and lower there is an area where the pen screw can come into contact with the body. For y positions < 0 the x coordinate should be limited to x >= 700 by your software as firmware 1.0.1 and lower allow x >= 500 in this zone. This will be fixed in firmware 1.0.2.
 
 ### Simple Python Example
-Source code for a very simple example can be downloaded from [here](../../raw/master/Python/HelloWorld.py). The example works with Python 2.7 and Python 3, but Python 3 is preferred.
+[Source code](Python/HelloWorld.py) for a very simple example can be downloaded from [here](../../raw/master/Python/HelloWorld.py). The example works with Python 2.7 and Python 3, but Python 3 is preferred.
 
