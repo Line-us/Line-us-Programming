@@ -9,7 +9,7 @@ Line-us can be controlled using a simple TCP sockets API. The commands are a sub
 - [Responses from Line-us](#responses-from-line-us)
 - [Timing](#timing)
 - [Co-ordinate System](#co-ordinate-system)
-- [CAUTION for firmware 1.0.1 and lower](#caution-for-firmware-1.0.1-and-lower)
+- [CAUTION for firmware 1.0.1 and lower](#caution-for-firmware-101-and-lower)
 - [Simple Python Example](#simple-python-example)
 
 ### Making a Connection
