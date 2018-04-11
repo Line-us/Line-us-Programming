@@ -23,7 +23,7 @@ class LineUs:
         self.__connected = False
 
     def g01(self, x, y, z):
-        """Send a G01 (interpolated move, and wait for the response before returning"""
+        """Send a G01 (interpolated move), and wait for the response before returning"""
         cmd = b'G01 X'
         cmd += str(x).encode()
         cmd += b' Y'
@@ -34,7 +34,7 @@ class LineUs:
         self.__read_response()
 
     def __read_response(self):
-        """Read form the socket one byte at a time until we get a null"""
+        """Read from the socket one byte at a time until we get a null"""
         line = b''
         while True:
             char = self.__line_us.recv(1)
