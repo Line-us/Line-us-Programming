@@ -12,6 +12,7 @@ Line-us can be controlled using a simple TCP sockets API. The commands are a sub
 - [CAUTION for firmware 1.0.1 and lower](#caution-for-firmware-101-and-lower)
 - [Simple Python Example](#simple-python-example)
 - [Simple Processing Example](#simple-processing-example)
+- [Simple Node Example created by pandrr](#simple-node-example)
 
 ### Making a Connection
 The default name for Line-us is `line-us`, although it can be changed using the `M550` Gcode command or using the App. Line-us supports mDNS (Bonjour) so by default the hostname will be `line-us.local` and it listens on port 1337. The connection to Line-us can be tested with a telnet client by using the command `telnet line-us.local 1337`. On a successful connection Line-us will respond with a `hello` message followed by `KEY:value` pairs for `VERSION` (firmware version number) `NAME` (the name of the Line-us) and `SERIAL` (the serial number of the Line-us). The `hello` message (like all messages from Line-us) is terminated with `\r\n\0`. It is **very important that the full `hello` message is read from the socket including the `\0` before any commands are sent**.
@@ -36,3 +37,6 @@ It should not be possible to send a GCode that overstretches the arm, or causes 
 
 ### Simple Processing Example
 [Source code](Processing/HelloWorld/HelloWorld.pde#L1) for a very simple example can be downloaded from [here](../../raw/master/Processing/HelloWorld/HelloWorld.pde). The example works with with Processing 3.3.7 (Java).
+
+### Simple Node Example
+Pandrr has ported our Python example to Node! - check out his GitHub [here](https://github.com/pandrr/line-us)
