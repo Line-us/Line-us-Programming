@@ -4,15 +4,29 @@ Line-us is a small internet connected robot drawing arm. It copies your movement
 Line-us can be controlled using a simple TCP sockets API. The commands are a subset of GCode, loosely based on the [RepRap spec](http://reprap.org/wiki/G-code). The supported GCode set is described in the [GCode Specification Document](Documentation/GCodeSpec.pdf) but the primary command used for drawing is the G01 (interpolated move) command.
 
 # Contents
+- [Simple Python Example](#simple-python-example)
+- [Simple Processing Example](#simple-processing-example)
+- [Simple Node Example created by pandrr](#simple-node-example)
+- [Simple C Example created by Paul Haeberli](#simple-c-example)
 - [Making a connection](#making-a-connection)
 - [Sending GCode](#sending-gcode)
 - [Responses from Line-us](#responses-from-line-us)
 - [Timing](#timing)
 - [Co-ordinate System](#co-ordinate-system)
 - [CAUTION for firmware 1.0.1 and lower](#caution-for-firmware-101-and-lower)
-- [Simple Python Example](#simple-python-example)
-- [Simple Processing Example](#simple-processing-example)
-- [Simple Node Example created by pandrr](#simple-node-example)
+
+
+### Simple Python Example
+[Source code](Python/HelloWorld.py#L1) for a very simple example can be downloaded from [here](../../raw/master/Python/HelloWorld.py). The example works with Python 2.7 and Python 3, but Python 3 is preferred.
+
+### Simple Processing Example
+[Source code](Processing/HelloWorld/HelloWorld.pde#L1) for a very simple example can be downloaded from [here](../../raw/master/Processing/HelloWorld/HelloWorld.pde). The example works with with Processing 3.3.7 (Java) - just copy and paste into your Processing window.
+
+### Simple Node Example
+Pandrr has ported our Python example to Node! - check out his GitHub [here](https://github.com/pandrr/line-us)
+
+### Simple C Example
+[Source code](C/lineustest.c) for a simple example in C created by Paul Haberli can be downloaded from [here](../../raw/master/C/lineustest.c). The code complies on MACOS using gcc but should be fairly portable. A [Makefile](C/Makefile) is also included so if you have gcc in your path, just type 'make'
 
 ### Making a Connection
 The default name for Line-us is `line-us`, although it can be changed using the `M550` Gcode command or using the App. Line-us supports mDNS (Bonjour) so by default the hostname will be `line-us.local` and it listens on port 1337. The connection to Line-us can be tested with a telnet client by using the command `telnet line-us.local 1337`. On a successful connection Line-us will respond with a `hello` message followed by `KEY:value` pairs for `VERSION` (firmware version number) `NAME` (the name of the Line-us) and `SERIAL` (the serial number of the Line-us). The `hello` message (like all messages from Line-us) is terminated with `\r\n\0`. It is **very important that the full `hello` message is read from the socket including the `\0` before any commands are sent**.
@@ -31,12 +45,3 @@ Line-us GCode commands use 'machine co-ordinates'. The origin point (0, 0) for t
 
 ### CAUTION for firmware 1.0.1 and lower
 It should not be possible to send a GCode that overstretches the arm, or causes it to hit the body of Line-us. However, in firmware 1.0.1 and lower there is an area where the pen screw can come into contact with the body. For y positions < 0 the x coordinate should be limited to x >= 700 by your software as firmware 1.0.1 and lower allow x >= 500 in this zone. This will be fixed in firmware 1.0.2.
-
-### Simple Python Example
-[Source code](Python/HelloWorld.py#L1) for a very simple example can be downloaded from [here](../../raw/master/Python/HelloWorld.py). The example works with Python 2.7 and Python 3, but Python 3 is preferred.
-
-### Simple Processing Example
-[Source code](Processing/HelloWorld/HelloWorld.pde#L1) for a very simple example can be downloaded from [here](../../raw/master/Processing/HelloWorld/HelloWorld.pde). The example works with with Processing 3.3.7 (Java).
-
-### Simple Node Example
-Pandrr has ported our Python example to Node! - check out his GitHub [here](https://github.com/pandrr/line-us)

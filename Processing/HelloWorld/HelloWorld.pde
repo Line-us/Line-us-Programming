@@ -6,6 +6,8 @@ import processing.net.*;
    Line-us is small and it does not cope well with having to buffer more than
    one message.
 
+   To run this example just copy and paste the code into your Processing window.
+
    Good Luck!
 */
 
