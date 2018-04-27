@@ -1,7 +1,9 @@
 # Getting Started with Line-us Programming
 Line-us is a small internet connected robot drawing arm. It copies your movements in real time and draws with a real pen on paper. 
 
-Line-us can be controlled using a simple TCP sockets API. The commands are a subset of GCode, loosely based on the [RepRap spec](http://reprap.org/wiki/G-code). The supported GCode set is described in the [GCode Specification Document](Documentation/GCodeSpec.pdf) but the primary command used for drawing is the G01 (interpolated move) command.
+Line-us can be controlled using a simple TCP sockets API. The commands are a subset of GCode, loosely based on the [RepRap spec](http://reprap.org/wiki/G-code). The supported GCode set is described in the [GCode Specification Document](Documentation/GCodeSpec.pdf) but the primary command used for drawing is the G01 (interpolated move) command. 
+
+The simplest way to get started is to try one of the examples below.
 
 # Contents
 - [Simple Python Example](#simple-python-example)
