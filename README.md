@@ -9,6 +9,7 @@ The simplest way to get started is to try one of the examples below.
 - [Simple Python Example](#simple-python-example)
 - [Simple Processing Example](#simple-processing-example)
 - [Simple Node Example created by pandrr](#simple-node-example)
+- [Line-us JS Kit created by funwithtriangles](#line-us-js-kit)
 - [Simple C Example created by Paul Haeberli](#simple-c-example)
 - [Making a connection](#making-a-connection)
 - [Sending GCode](#sending-gcode)
