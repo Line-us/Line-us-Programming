@@ -9,6 +9,7 @@ The simplest way to get started is to try one of the examples below.
 - [Simple Python Example](#simple-python-example)
 - [Simple Processing Example](#simple-processing-example)
 - [Simple Node Example created by pandrr](#simple-node-example)
+- [Line-us JS Kit created by funwithtriangles](#line-us-js-kit)
 - [Simple C Example created by Paul Haeberli](#simple-c-example)
 - [C \# Unity Example created by soylentgraham](#C\#-Example-PopLineus)
 
@@ -28,6 +29,9 @@ The simplest way to get started is to try one of the examples below.
 
 ### Simple Node Example
 Pandrr has ported our Python example to Node! - check out his GitHub [here](https://github.com/pandrr/line-us)
+
+### Line-us JS Kit
+Write commands in Javascript and preview the drawing in your browser before sending to Line-us! Created by Alex Kempton, check out his Github [here](https://github.com/funwithtriangles/line-us-js-kit)
 
 ### Simple C Example
 [Source code](C/lineustest.c) for a simple example in C created by Paul Haberli can be downloaded from [here](../../raw/master/C/lineustest.c). The code complies on MACOS using gcc but should be fairly portable. A [Makefile](C/Makefile) is also included so if you have gcc in your path, just type 'make'
