@@ -11,9 +11,9 @@ The simplest way to get started is to try one of the examples below.
 - [Simple Node Example created by pandrr](#simple-node-example)
 - [Line-us JS Kit created by funwithtriangles](#line-us-js-kit)
 - [Simple C Example created by Paul Haeberli](#simple-c-example)
-- [C \# Unity Example created by soylentgraham](#C\#-Example-PopLineus)
+- [C \# Unity Example created by soylentgraham](#c\#-example-poplineus)
 
-####Protocol details
+#### Protocol details
 - [Making a connection](#making-a-connection)
 - [Sending GCode](#sending-gcode)
 - [Responses from Line-us](#responses-from-line-us)
