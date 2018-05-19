@@ -4,14 +4,14 @@ Line-us is a small internet connected robot drawing arm. It copies your movement
 Line-us can be controlled using a simple TCP sockets API. The commands are a subset of GCode, loosely based on the [RepRap spec](http://reprap.org/wiki/G-code). The supported GCode set is described in the [GCode Specification Document](Documentation/GCodeSpec.pdf) but the primary command used for drawing is the G01 (interpolated move) command. 
 
 The simplest way to get started is to try one of the examples below.
-#Contents
+# Contents
 #### Example code
 - [Simple Python Example](#simple-python-example)
 - [Simple Processing Example](#simple-processing-example)
 - [Simple Node Example created by pandrr](#simple-node-example)
 - [Line-us JS Kit created by funwithtriangles](#line-us-js-kit)
 - [Simple C Example created by Paul Haeberli](#simple-c-example)
-- [C \# Unity Example created by soylentgraham](#c\#-example-poplineus)
+- [C# Unity Example created by soylentgraham](#c-sharp-unity-example-poplineus)
 
 #### Protocol details
 - [Making a connection](#making-a-connection)
@@ -36,7 +36,7 @@ Write commands in Javascript and preview the drawing in your browser before send
 ### Simple C Example
 [Source code](C/lineustest.c) for a simple example in C created by Paul Haberli can be downloaded from [here](../../raw/master/C/lineustest.c). The code complies on MACOS using gcc but should be fairly portable. A [Makefile](C/Makefile) is also included so if you have gcc in your path, just type 'make'
 
-### C\# Example PopLineus
+### C Sharp Unity Example PopLineus
 C (wrapped in unity for now) implementation of the protocol for Line-us created by solentygraham, check out his GitHub [here](https://github.com/NewChromantics/PopLineus)
 
 ### Making a Connection
