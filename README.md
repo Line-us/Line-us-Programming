@@ -12,6 +12,7 @@ The simplest way to get started is to try one of the examples below.
 - [Line-us JS Kit created by funwithtriangles](#line-us-js-kit)
 - [Simple C Example created by Paul Haeberli](#simple-c-example)
 - [C# Unity Example created by soylentgraham](#c-sharp-unity-example-poplineus)
+- [Java Generative app by @fiskdebug](java-generative-app-by-fiskdebug)
 
 #### Protocol details
 - [Making a connection](#making-a-connection)
@@ -38,6 +39,9 @@ Write commands in Javascript and preview the drawing in your browser before send
 
 ### C Sharp Unity Example PopLineus
 C (wrapped in unity for now) implementation of the protocol for Line-us created by solentygraham, check out his GitHub [here](https://github.com/NewChromantics/PopLineus)
+
+### Java Generative App by fiskdebug
+Very nice Java app available as [source](https://github.com/fiskurgit/Schroeder) or an [installable package for Mac](https://drive.google.com/open?id=1A-tzkwd0ce5_O0g8U3tDQ641fObSap1M) on @fiskfamilij's [GitHub](https://github.com/fiskurgit/Schroeder)
 
 ### Making a Connection
 The default name for Line-us is `line-us`, although it can be changed using the `M550` Gcode command or using the App. Line-us supports mDNS (Bonjour) so by default the hostname will be `line-us.local` and it listens on port 1337. The connection to Line-us can be tested with a telnet client by using the command `telnet line-us.local 1337`. On a successful connection Line-us will respond with a `hello` message followed by `KEY:value` pairs for `VERSION` (firmware version number) `NAME` (the name of the Line-us) and `SERIAL` (the serial number of the Line-us). The `hello` message (like all messages from Line-us) is terminated with `\r\n\0`. It is **very important that the full `hello` message is read from the socket including the `\0` before any commands are sent**.
