@@ -40,7 +40,7 @@ Write commands in Javascript and preview the drawing in your browser before send
 ### C Sharp Unity Example PopLineus
 C (wrapped in unity for now) implementation of the protocol for Line-us created by solentygraham, check out his GitHub [here](https://github.com/NewChromantics/PopLineus)
 
-### Java Generative App by fiskdebug
+### Java Generative App By Fiskdebug
 Very nice Java app available as [source](https://github.com/fiskurgit/Schroeder) or an [installable package for Mac](https://drive.google.com/open?id=1A-tzkwd0ce5_O0g8U3tDQ641fObSap1M) on @fiskfamilij's [GitHub](https://github.com/fiskurgit/Schroeder)
 
 ### Making a Connection
