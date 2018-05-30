@@ -12,7 +12,7 @@ The simplest way to get started is to try one of the examples below.
 - [Line-us JS Kit created by funwithtriangles](#line-us-js-kit)
 - [Simple C Example created by Paul Haeberli](#simple-c-example)
 - [C# Unity Example created by soylentgraham](#c-sharp-unity-example-poplineus)
-- [Java Generative app by @fiskdebug](java-generative-app-by-fiskdebug)
+- [Java Generative app by @fiskdebug](#java-generative-app-by-fiskdebug)
 
 #### Protocol details
 - [Making a connection](#making-a-connection)
