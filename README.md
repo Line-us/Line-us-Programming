@@ -3,6 +3,8 @@ Line-us is a small internet connected robot drawing arm. It copies your movement
 
 Line-us can be controlled using a simple TCP sockets API. The commands are a subset of GCode, loosely based on the [RepRap spec](http://reprap.org/wiki/G-code). The supported GCode set is described in the [GCode Specification Document](Documentation/GCodeSpec.pdf) but the primary command used for drawing is the G01 (interpolated move) command. 
 
+Be sure to check out the [Line-us Drawing Area Diagram](Documentation/LineUsDrawingArea.pdf) which will tell you all you need to knwo about the co-ordinate system that Line-us uses and the shape of the drawing space.
+
 The simplest way to get started is to try one of the examples below.
 # Contents
 #### Example code
