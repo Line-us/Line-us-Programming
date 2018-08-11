@@ -34,7 +34,7 @@ The simplest way to get started is to try one of the examples below.
 Pandrr has ported our Python example to Node! - check out his GitHub [here](https://github.com/pandrr/line-us)
 
 ### Line-us JS Kit
-Write commands in Javascript and preview the drawing in your browser before sending to Line-us! Created by Alex Kempton, check out his Github [here](https://github.com/funwithtriangles/line-us-js-kit)
+Write commands in JavaScript and preview the drawing in your browser before sending to Line-us! Created by Alex Kempton, check out his Github [here](https://github.com/funwithtriangles/line-us-js-kit)
 
 ### Simple C Example
 [Source code](C/lineustest.c) for a simple example in C created by Paul Haberli can be downloaded from [here](../../raw/master/C/lineustest.c). The code complies on MACOS using gcc but should be fairly portable. A [Makefile](C/Makefile) is also included so if you have gcc in your path, just type 'make'
@@ -49,13 +49,13 @@ Very nice Java app available as [source](https://github.com/fiskurgit/Schroeder)
 The default name for Line-us is `line-us`, although it can be changed using the `M550` Gcode command or using the App. Line-us supports mDNS (Bonjour) so by default the hostname will be `line-us.local` and it listens on port 1337. The connection to Line-us can be tested with a telnet client by using the command `telnet line-us.local 1337`. On a successful connection Line-us will respond with a `hello` message followed by `KEY:value` pairs for `VERSION` (firmware version number) `NAME` (the name of the Line-us) and `SERIAL` (the serial number of the Line-us). The `hello` message (like all messages from Line-us) is terminated with `\r\n\0`. It is **very important that the full `hello` message is read from the socket including the `\0` before any commands are sent**.
 
 ### Sending Gcode
-GCode commands are a command followed by a zero or more parameters separated by white space. Paramters are a single letter followed immediately by the value. Where necessary the values can be enclosed in double quotes `"`. A GCode command can be terminated by one of, or a combination of `\r`, `\n`, and `\0`.
+GCode commands are a command followed by a zero or more parameters separated by white space. Parameters are a single letter followed immediately by the value. Where necessary the values can be enclosed in double quotes `"`. A GCode command can be terminated by one of, or a combination of `\r`, `\n`, and `\0`.
 
 ### Responses from Line-us
-Each GCode response will result in a response message from Line-us, which will start with either `ok` indicating success, or `error` indicating an error and is followed by zero or more `KEY:value` pairs as described in the [GCode Specification Document](Documentation/GCodeSpec.pdf). The resonse message is terminated with `\r\n\0`, and it is **very important that the full response message is read from the socket including the `\0` before the next command is sent**.
+Each GCode response will result in a response message from Line-us, which will start with either `ok` indicating success, or `error` indicating an error and is followed by zero or more `KEY:value` pairs as described in the [GCode Specification Document](Documentation/GCodeSpec.pdf). The response message is terminated with `\r\n\0`, and it is **very important that the full response message is read from the socket including the `\0` before the next command is sent**.
 
 ### Timing
-If a GCode command that moves the arm is sent to Line-us while the arm is still in motion the command will be accepted, but the response message will not be sent until the prior movement has completed. This means that the sender will reamin in sync with the arm (at most there will be one outstanding command).
+If a GCode command that moves the arm is sent to Line-us while the arm is still in motion the command will be accepted, but the response message will not be sent until the prior movement has completed. This means that the sender will remain in sync with the arm (at most there will be one outstanding command).
 
 ### Co-ordinate System
 Line-us GCode commands use 'machine co-ordinates'. The origin point (0, 0) for the co-ordinate system is at the centre point of the servo shafts, and GCode commands use drawing units (100 drawing units is approximately 5mm). The home point for the arm is (1000, 1000). The z axis is the pen height; 0 is down and 1000 is up. The shape if the drawing area is not rectangular. See the [Line-us Drawing Area Diagram](Documentation/LineUsDrawingArea.pdf) for details. If a GCode for a movement outside of the drawing are is sent Line-us will move to something approximating the closest it can get to that point while still remaining within the drawing area. If the pen is on the down position (z < 500) the pen will lift (z = 1000).
