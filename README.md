@@ -20,6 +20,7 @@ The simplest way to get started is to try one of the examples below.
 
 #### Libraries
 - [Javascript Library by Beardicus](#javascript-library-by-beardicus)
+- [PHP Library by fxmorin](#php-library-by-fxmorin)
 
 #### Protocol details
 - [Making a connection](#making-a-connection)
@@ -58,6 +59,9 @@ Great little app to plot your SVG files directly to Line-us. Available as [insta
 
 ### Javascript Library by Beardicus
 If you're thinking of writing some Javascript you should definitely check out this library as it will make your life *much* easier. It handles connection, queueing and all of the things you really don't want to do yourself. Works in the browser as well as with Node. Everything you need is at [Beardicus's GitHub](https://github.com/beardicus/line-us)
+
+### PHP Library by fxmorin
+A library created by fxmorin to allow you to use your Line-us with PHP. Available at [fxmorin's GitHub](https://github.com/fxmorin/line-us)
 
 ### Making a Connection
 The default name for Line-us is `line-us`, although it can be changed using the `M550` Gcode command or using the App. Line-us supports mDNS (Bonjour) so by default the hostname will be `line-us.local` and it listens on port 1337. The connection to Line-us can be tested with a telnet client by using the command `telnet line-us.local 1337`. On a successful connection Line-us will respond with a `hello` message followed by `KEY:value` pairs for `VERSION` (firmware version number) `NAME` (the name of the Line-us) and `SERIAL` (the serial number of the Line-us). The `hello` message (like all messages from Line-us) is terminated with `\r\n\0`. It is **very important that the full `hello` message is read from the socket including the `\0` before any commands are sent**.
