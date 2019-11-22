@@ -1,7 +1,7 @@
 # Getting Started with Line-us Programming
 Line-us is a small internet connected robot drawing arm. It copies your movements in real time and draws with a real pen on paper. 
 
-Line-us can be controlled using a simple TCP sockets API. The commands are a subset of GCode, loosely based on the [RepRap spec](http://reprap.org/wiki/G-code). The supported GCode set is described in the [GCode Specification Document](Documentation/GCodeSpec.pdf) but the primary command used for drawing is the G01 (interpolated move) command. 
+Line-us can be controlled using a simple API, either TCP Sockets or Websockets. The commands are a subset of GCode, loosely based on the [RepRap spec](http://reprap.org/wiki/G-code). The supported GCode set is described in the [GCode Specification Document](Documentation/GCodeSpec.pdf) but the primary command used for drawing is the G01 (interpolated move) command. 
 
 Be sure to check out the [Line-us Drawing Area Diagram](Documentation/LineUsDrawingArea.pdf) which will tell you all you need to know about the co-ordinate system that Line-us uses and the shape of the drawing space.
 
@@ -67,7 +67,7 @@ A library created by fxmorin to allow you to use your Line-us with PHP. Availabl
 
 ## Protocol Details
 ### Introduction
-As of firmware 3.0.0 Line-us offers a webscokets API as well as the original TCP Sockets API. All of the commands and responses are the same across both of the APIs, but there are a small number of commands that are not avaialble in the websockets API for security reasons (for example `M587` to set WiFi details).
+As of firmware 3.0.0 Line-us offers a webscokets API as well as the original TCP Sockets API. All of the commands and responses are the same across both of the APIs, but there are a small number of commands that are not avaialble in the websockets API for security reasons (for example `M587` to set WiFi details). Details are in the [GCode Specification Document](Documentation/GCodeSpec.pdf).
 
 ### Making a Connection
 The default name for Line-us is `line-us`, although it can be changed using the `M550` Gcode command or using the App. Line-us supports mDNS (Bonjour) so by default the hostname will be `line-us.local`. On a successful connection Line-us will respond with a `hello` message followed by `KEY:value` pairs for `VERSION` (firmware version number) `NAME` (the name of the Line-us) and `SERIAL` (the serial number of the Line-us). For example `hello VERSION:"3.2.0 Nov 17 2019 17:54:57" NAME:line-us SERIAL:123456`
