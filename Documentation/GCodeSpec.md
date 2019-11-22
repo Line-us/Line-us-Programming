@@ -1,4 +1,4 @@
-| GCode | Description | Parameters | Example | Details |
+| GCode | Description | Params | Example | Details |
 | --- | --- | --- | ----- | ----- |
 | G00 | Rapid Positioning | X Y Z | G00 X1200 Y1300 Z0 | Move from current position to X,Y,Z at full speed. Does not necessarily move in a straight line as each servo moves at full speed. In some circumstances the arm could hit the body so use with caution. `G00` is rarely used. `G01` is the preferred command for most operations. |
 | G01 | Linear Interpolation | X Y Z | G01 X1200 Y1300 Z1000G01 Z1000 | This is the command to use for drawing. The arm will move from its current position to X,Y,Z in a straight line at the speed set using the Drawing Speed command. Note that the command can be used with a single coordinate. This leaves the other two coordinates unchanged and would most commonly be used to lift the pen without moving the arm using `G01 Z1000`. |
