@@ -29,9 +29,10 @@ The simplest way to get started is to try one of the examples below.
 - [Timing](#timing)
 - [Co-ordinate System](#co-ordinate-system)
 - [CAUTION for firmware 1.0.1 and lower](#caution-for-firmware-101-and-lower)
----
+
+## Example Code
 ### Simple Python Example
-[Source code](Python/HelloWorld.py#L1) for a very simple example can be downloaded from [here](../../raw/master/Python/HelloWorld.py). The example works with Python 2.7 and Python 3, but Python 3 is preferred.
+There are two simple examples for python. [Source code](Python/HelloWorld.py#L1) for a very simple example using the TCP Sockets API can be downloaded from [here](../../raw/master/Python/HelloWorld.py). The example works with Python 2.7 and Python 3, but Python 3 is preferred. There is also [Source code](Python/HelloWorldWebsockets.py#L1) for a straightforward prot of the TCP example to use the websockets API that can be downloaded [here](../../raw/master/Python/HelloWorldWebsockets.py). For the sake of clarity the Websockets example tries to sidestep the use of asyncio by wrapping each of the async functions. 
 
 ### Simple Processing Example
 [Source code](Processing/HelloWorld/HelloWorld.pde#L1) for a very simple example can be downloaded from [here](../../raw/master/Processing/HelloWorld/HelloWorld.pde). The example works with with Processing 3.3.7 (Java) - just copy and paste into your Processing window.
@@ -57,22 +58,31 @@ Very nice Java app available as [source](https://github.com/fiskurgit/Schroeder)
 ### Simple SVG Plotter by Michael Zöllner
 Great little app to plot your SVG files directly to Line-us. Available as [installers for Mac and Windows](https://github.com/ixd-hof/LineUs_SVG/releases) or [source](https://github.com/ixd-hof/LineUs_SVG) with instructions on [Michael's GitHub](https://github.com/ixd-hof/LineUs_SVG).
 
----
+## Libraries
 ### Javascript Library by Beardicus
 If you're thinking of writing some Javascript you should definitely check out this library as it will make your life *much* easier. It handles connection, queueing and all of the things you really don't want to do yourself. Works in the browser as well as with Node. Everything you need is at [Beardicus's GitHub](https://github.com/beardicus/line-us)
 
 ### PHP Library by fxmorin
 A library created by fxmorin to allow you to use your Line-us with PHP. Available at [fxmorin's GitHub](https://github.com/fxmorin/line-us)
 
----
+## Protocol Details
+### Introduction
+As of firmware 3.0.0 Line-us offers a webscokets API as well as the original TCP Sockets API. All of the commands and responses are the same across both of the APIs, but there are a small number of commands that are not avaialble in the websockets API for security reasons (for example `M587` to set WiFi details).
+
 ### Making a Connection
-The default name for Line-us is `line-us`, although it can be changed using the `M550` Gcode command or using the App. Line-us supports mDNS (Bonjour) so by default the hostname will be `line-us.local` and it listens on port 1337. The connection to Line-us can be tested with a telnet client by using the command `telnet line-us.local 1337`. On a successful connection Line-us will respond with a `hello` message followed by `KEY:value` pairs for `VERSION` (firmware version number) `NAME` (the name of the Line-us) and `SERIAL` (the serial number of the Line-us). The `hello` message (like all messages from Line-us) is terminated with `\r\n\0`. It is **very important that the full `hello` message is read from the socket including the `\0` before any commands are sent**.
+The default name for Line-us is `line-us`, although it can be changed using the `M550` Gcode command or using the App. Line-us supports mDNS (Bonjour) so by default the hostname will be `line-us.local`. On a successful connection Line-us will respond with a `hello` message followed by `KEY:value` pairs for `VERSION` (firmware version number) `NAME` (the name of the Line-us) and `SERIAL` (the serial number of the Line-us). For example `hello VERSION:"3.2.0 Nov 17 2019 17:54:57" NAME:line-us SERIAL:123456`
+
+##### TCP Sockets Connection
+Line-us listens on TCP port 1337 and the connection to Line-us can be tested with a telnet client by using the command `telnet line-us.local 1337`. On connection you will receive the `hello` message, which (like all messages from Line-us) is terminated with `\r\n\0`. In firmware < 3.0.0 it was very important that the full `hello` message was read from the socket including the `\0` before any commands were sent. Firmware 3.0.0 or later has an improved TCP stack that means that this is no longer critical. It is still best to read the message though.
+
+##### Websockets Connection
+The websockets URL for your Line-us (assuming you're using the default name) is `ws://line-us.local`. Note that it is not a secure (`wss:`) websocket - unfortunately Line-us's tiny brain isn't quite up to running SSL. On connection you will receive the `hello` message and once you've received it you can start to send GCode. A simple way to experiment with the websockets API is to use [Firecamp](https://firecamp.app) - just connect and send one GCode per message.
 
 ### Sending Gcode
-GCode commands are a command followed by a zero or more parameters separated by white space. Parameters are a single letter followed immediately by the value. Where necessary the values can be enclosed in double quotes `"`. A GCode command can be terminated by one of, or a combination of `\r`, `\n`, and `\0`.
+GCode commands are a command followed by a zero or more parameters separated by white space. Parameters are a single letter followed immediately by the value. The [GCode Specification Document](Documentation/GCodeSpec.pdf) has details of all of the available GCodes, but a simepl example would be `G01 X1000 Y0 Z1000` to move to point (1000, 0) with the pen up. Where necessary the values can be enclosed in double quotes `"` for example `M587 Smy-ssid P"password with spaces"` if you have spaces in your WiFi password. For TCP Sockets connections GCode commands _**must**_ be terminated by one of, or a combination of `\r`, `\n`, and `\0`. Websockets connections do not require any terminators in the messages. 
 
 ### Responses from Line-us
-Each GCode response will result in a response message from Line-us, which will start with either `ok` indicating success, or `error` indicating an error and is followed by zero or more `KEY:value` pairs as described in the [GCode Specification Document](Documentation/GCodeSpec.pdf). The response message is terminated with `\r\n\0`, and it is **very important that the full response message is read from the socket including the `\0` before the next command is sent**.
+Each GCode response will result in a response message from Line-us, which will start with either `ok` indicating success, or `error` indicating an error and is followed by zero or more `KEY:value` pairs as described in the [GCode Specification Document](Documentation/GCodeSpec.pdf). For TCP Sockets the response message is terminated with `\r\n\0`. In firmware < 3.0.0 it was essential that the full response message was read from the socket including the `\0` before the next command was sent. This is no longer the case with firmware 3.0.0 or later although it is still advisable to read the messages. Fow websockets the respnse will be received in a text messsage.
 
 ### Timing
 If a GCode command that moves the arm is sent to Line-us while the arm is still in motion the command will be accepted, but the response message will not be sent until the prior movement has completed. This means that the sender will remain in sync with the arm (at most there will be one outstanding command).
