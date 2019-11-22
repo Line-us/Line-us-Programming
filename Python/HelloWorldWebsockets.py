@@ -46,7 +46,7 @@ class LineUs:
 
 
 if __name__ == '__main__':
-    my_line_us = LineUs('line-us-dev.local')
+    my_line_us = LineUs('line-us.local')
     my_line_us.connect()
     print(my_line_us.get_hello_string())
     time.sleep(1)
