@@ -86,4 +86,3 @@ my_line_us.g01(1500, 300, 1000)
 
 time.sleep(1)
 my_line_us.disconnect()
-
