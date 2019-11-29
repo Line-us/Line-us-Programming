@@ -85,7 +85,7 @@ Great little app to plot your SVG files directly to Line-us. Available as [insta
 ## Libraries to make programming easy
 
 ### Official Python module for Line-us
-This is the official Line-us Python Module. It includes machine discovery via DNS-sd and access to all of the Line-us GCodes. There is a [Quickstart giude](https://lineuspythonmodule.readthedocs.io/en/latest/#quickstart) that covers the basics and also [full documentation](https://lineuspythonmodule.readthedocs.io/en/latest/) if you want to dig a bit deeper. It's open source so you can also [check it out on GitHub](https://github.com/Line-us/LineUsPythonModule).
+This is the official Line-us Python Module. It includes machine discovery via DNS-sd and access to all of the Line-us GCodes. There is a [Quickstart guide](https://lineuspythonmodule.readthedocs.io/en/latest/#quickstart) that covers the basics and also [full documentation](https://lineuspythonmodule.readthedocs.io/en/latest/) if you want to dig a bit deeper. It's open source so you can also [check it out on GitHub](https://github.com/Line-us/LineUsPythonModule).
 
 ### Javascript Library by Beardicus
 If you're thinking of writing some Javascript you should definitely check out this library as it will make your life *much* easier. It handles connection, queueing and all of the things you really don't want to do yourself. Works in the browser as well as with Node. Everything you need is at [Beardicus's GitHub](https://github.com/beardicus/line-us)
