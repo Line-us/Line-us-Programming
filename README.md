@@ -16,6 +16,7 @@ The simplest way to get started is to try one of the examples below.
 - [Simple C# Unity Example created by soylentgraham](#simple-c-sharp-unity-example-poplineus)
 
 #### Applications and other fun things to do with your Line-us
+- [Line-us plays music](#line-us-plays-music)
 - [Line-us JS Kit created by funwithtriangles](#line-us-js-kit)
 - [Java Generative app by @fiskdebug](#java-generative-app-by-fiskdebug)
 - [SVG Plotter for Line-us by Michael Zöllner](#svg-plotter-by-michael-zöllner)
@@ -52,7 +53,7 @@ Pandrr has ported our Python example to Node! - check out his GitHub [here](http
 C# (wrapped in unity for now) implementation of the protocol for Line-us created by solentygraham, check out his GitHub [here](https://github.com/NewChromantics/PopLineus)
 
 ## Applications and other fun things to do with your Line-us
-### Line-us Music
+### Line-us plays music
 We've taught Line-us to play keyboards with some [simple Python3 code](Python/LineUsPlaysKeyboards.py#L1) that can be downloaded from [here](../../raw/master/Python/LineUsPlaysKeyboards.py). It's Python3 only so if you're on a Mac you'll need to install Python3 for it to work. We've put all of the keyboard code into a module, so you will need to istall that using `pip install lineusmusic`. When you install `lineusmusic` you'll also get the `lineus` module, but if you want to install that separately you can `pip install lineus`. As usual, we'd recommend using a virtual environment - my prefenece is [pipenv](https://thoughtbot.com/blog/how-to-manage-your-python-projects-with-pipenv) but there are a few options.
 
 ### Line-us JS Kit
