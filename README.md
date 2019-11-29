@@ -45,14 +45,16 @@ Pandrr has ported our Python example to Node! - check out his GitHub [here](http
 ### Simple Dart Example
 [Source code](Dart/line_us.dart) for a very simple example can be downloaded from [here](../../raw/master/Dart/line_us.dart). You'll need [Dart](https://www.dartlang.org/) installed.
 
-
-### Simple C Sharp Unity Example PopLineus
-C (wrapped in unity for now) implementation of the protocol for Line-us created by solentygraham, check out his GitHub [here](https://github.com/NewChromantics/PopLineus)
-
 ### Simple C Example
 [Source code](C/lineustest.c) for a simple example in C created by Paul Haberli can be downloaded from [here](../../raw/master/C/lineustest.c). The code complies on MACOS using gcc but should be fairly portable. A [Makefile](C/Makefile) is also included so if you have gcc in your path, just type 'make'
 
+### Simple C Sharp Unity Example PopLineus
+C# (wrapped in unity for now) implementation of the protocol for Line-us created by solentygraham, check out his GitHub [here](https://github.com/NewChromantics/PopLineus)
+
 ## Applications and other fun things to do with your Line-us
+### Line-us Music
+We've taught Line-us to play keyboards with some [simple Python3 code](Python/LineUsPlaysKeyboards.py#L1) that can be downloaded from [here](../../raw/master/Python/LineUsPlaysKeyboards.py). It's Python3 only so if you're on a Mac you'll need to install Python3 for it to work. We've put all of the keyboard code into a module, so you will need to istall that using `pip install lineusmusic`. When you install `lineusmusic` you'll also get the `lineus` module, but if you want to install that separately you can `pip install lineus`. As usual, we'd recommend using a virtual environment - my prefenece is [pipenv](https://thoughtbot.com/blog/how-to-manage-your-python-projects-with-pipenv) but there are a few options.
+
 ### Line-us JS Kit
 Write commands in JavaScript and preview the drawing in your browser before sending to Line-us! Created by Alex Kempton, check out his Github [here](https://github.com/funwithtriangles/line-us-js-kit)
 
