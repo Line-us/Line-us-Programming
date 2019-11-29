@@ -22,7 +22,7 @@ The simplest way to get started is to try one of the examples below.
 - [SVG Plotter for Line-us by Michael Zöllner](#svg-plotter-by-michael-zöllner)
 
 #### Libraries to make programming easy
-- [Official Python module for Line-us](official-python-module-for-line-us)
+- [Official Python module for Line-us](#ßofficial-python-module-for-line-us)
 - [Javascript Library by Beardicus](#javascript-library-by-beardicus)
 - [PHP Library by fxmorin](#php-library-by-fxmorin)
 
@@ -83,6 +83,7 @@ Very nice Java app available as [source](https://github.com/fiskurgit/Schroeder)
 Great little app to plot your SVG files directly to Line-us. Available as [installers for Mac and Windows](https://github.com/ixd-hof/LineUs_SVG/releases) or [source](https://github.com/ixd-hof/LineUs_SVG) with instructions on [Michael's GitHub](https://github.com/ixd-hof/LineUs_SVG).
 
 ## Libraries to make programming easy
+
 ### Official Python module for Line-us
 This is the official Line-us Python Module. It includes machine discovery via DNS-sd and access to all of the Line-us GCodes. There is a [Quickstart giude](https://lineuspythonmodule.readthedocs.io/en/latest/#quickstart) that covers the basics and also [full documentation](https://lineuspythonmodule.readthedocs.io/en/latest/) if you want to dig a bit deeper. It's open source so you can also [check it out on GitHub](https://github.com/Line-us/LineUsPythonModule).
 
