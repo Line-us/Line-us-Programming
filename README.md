@@ -56,6 +56,22 @@ C# (wrapped in unity for now) implementation of the protocol for Line-us created
 ### Line-us plays music
 We've taught Line-us to play keyboards with some [simple Python3 code](Python/LineUsPlaysKeyboards.py#L1) that can be downloaded from [here](../../raw/master/Python/LineUsPlaysKeyboards.py). It's Python3 only so if you're on a Mac you'll need to install Python3 for it to work. We've put all of the keyboard code into a module, so you will need to istall that using `pip install lineusmusic`. When you install `lineusmusic` you'll also get the `lineus` module, but if you want to install that separately you can `pip install lineus`. As usual, we'd recommend using a virtual environment - my prefenece is [pipenv](https://thoughtbot.com/blog/how-to-manage-your-python-projects-with-pipenv) but there are a few options.
 
+Music notation is lower case for natural notes and upper case for sharp, so 'a' is natural a
+ and A is a#. Next, we have the octave, '-' is one octave down and '+' one up. The key is fixed
+ as c major at the moment so this means that the note below c on the keyboard is b-. Lastly we have the duration.
+ The default length is one beat, the length of which is set using `set_bpm()`, and you can set the length to
+ multiples of this. So, for example a2 is an 'a' note played for two beats. An 'r' indicates a rest of one beat.
+
+ When you create the Keyboard object it moves Line-us to a 'home' position. This is keyboard
+ specific but for the Volca and Stylophone it's 'c' so the `input()` is included in the code to allow you to
+ make sure your Line-us is in the right position before playing the song.
+
+ It's easy to add a new keyboard type (see the LineUsMusic module docs for details) but for now we have
+ support for [Stylophone](https://dubreq.com/stylophone/) and the [Korg VolcaFM](https://dubreq.com/stylophone/) (actually it will work for some of the other Volcas too as they have the same keyboard layout).
+ Line-us can't reach to full range of the Volca keyboard so there are two options `keyboard='VolcaFM'`
+ and `keyboard='VolcaFMLow'`. I've included scales for the keyboards we support so you can see what notes
+ you have available.
+
 ### Line-us JS Kit
 Write commands in JavaScript and preview the drawing in your browser before sending to Line-us! Created by Alex Kempton, check out his Github [here](https://github.com/funwithtriangles/line-us-js-kit)
 
