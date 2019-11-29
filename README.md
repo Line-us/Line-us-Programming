@@ -7,22 +7,24 @@ Be sure to check out the [Line-us Drawing Area Diagram](Documentation/LineUsDraw
 
 The simplest way to get started is to try one of the examples below.
 # Contents
-#### Example code
+#### Simple Example code to get you started with programming
 - [Simple Python Example](#simple-python-example)
 - [Simple Processing Example](#simple-processing-example)
 - [Simple Node Example created by pandrr](#simple-node-example)
-- [Line-us JS Kit created by funwithtriangles](#line-us-js-kit)
-- [Simple C Example created by Paul Haeberli](#simple-c-example)
-- [C# Unity Example created by soylentgraham](#c-sharp-unity-example-poplineus)
-- [Java Generative app by @fiskdebug](#java-generative-app-by-fiskdebug)
 - [Simple Dart Example](#simple-dart-example)
-- [Simple SVG Plotter for Line-us by Michael Zöllner](#simple-svg-plotter-by-michael-zöllner)
+- [Simple C Example created by Paul Haeberli](#simple-c-example)
+- [Simple C# Unity Example created by soylentgraham](#simple-c-sharp-unity-example-poplineus)
 
-#### Libraries
+#### Applications and other fun things to do with your Line-us
+- [Line-us JS Kit created by funwithtriangles](#line-us-js-kit)
+- [Java Generative app by @fiskdebug](#java-generative-app-by-fiskdebug)
+- [SVG Plotter for Line-us by Michael Zöllner](#svg-plotter-by-michael-zöllner)
+
+#### Libraries to make programming easy
 - [Javascript Library by Beardicus](#javascript-library-by-beardicus)
 - [PHP Library by fxmorin](#php-library-by-fxmorin)
 
-#### Protocol details
+#### Protocol details for people who want to know how it all works
 - [Making a connection](#making-a-connection)
 - [Sending GCode](#sending-gcode)
 - [Responses from Line-us](#responses-from-line-us)
@@ -30,7 +32,7 @@ The simplest way to get started is to try one of the examples below.
 - [Co-ordinate System](#co-ordinate-system)
 - [CAUTION for firmware 1.0.1 and lower](#caution-for-firmware-101-and-lower)
 
-## Example Code
+## Simple Example code to get you started with programming
 ### Simple Python Example
 There are two simple examples for python. [Source code](Python/HelloWorld.py#L1) for a very simple example using the TCP Sockets API can be downloaded from [here](../../raw/master/Python/HelloWorld.py). The example works with Python 2.7 and Python 3, but Python 3 is preferred. There is also [Source code](Python/HelloWorldWebsockets.py#L1) for a straightforward prot of the TCP example to use the websockets API that can be downloaded [here](../../raw/master/Python/HelloWorldWebsockets.py). For the sake of clarity the Websockets example tries to sidestep the use of asyncio by wrapping each of the async functions. 
 
@@ -40,32 +42,34 @@ There are two simple examples for python. [Source code](Python/HelloWorld.py#L1)
 ### Simple Node Example
 Pandrr has ported our Python example to Node! - check out his GitHub [here](https://github.com/pandrr/line-us)
 
-### Line-us JS Kit
-Write commands in JavaScript and preview the drawing in your browser before sending to Line-us! Created by Alex Kempton, check out his Github [here](https://github.com/funwithtriangles/line-us-js-kit)
+### Simple Dart Example
+[Source code](Dart/line_us.dart) for a very simple example can be downloaded from [here](../../raw/master/Dart/line_us.dart). You'll need [Dart](https://www.dartlang.org/) installed.
+
+
+### Simple C Sharp Unity Example PopLineus
+C (wrapped in unity for now) implementation of the protocol for Line-us created by solentygraham, check out his GitHub [here](https://github.com/NewChromantics/PopLineus)
 
 ### Simple C Example
 [Source code](C/lineustest.c) for a simple example in C created by Paul Haberli can be downloaded from [here](../../raw/master/C/lineustest.c). The code complies on MACOS using gcc but should be fairly portable. A [Makefile](C/Makefile) is also included so if you have gcc in your path, just type 'make'
 
-### C Sharp Unity Example PopLineus
-C (wrapped in unity for now) implementation of the protocol for Line-us created by solentygraham, check out his GitHub [here](https://github.com/NewChromantics/PopLineus)
+## Applications and other fun things to do with your Line-us
+### Line-us JS Kit
+Write commands in JavaScript and preview the drawing in your browser before sending to Line-us! Created by Alex Kempton, check out his Github [here](https://github.com/funwithtriangles/line-us-js-kit)
 
 ### Java Generative App By Fiskdebug
 Very nice Java app available as [source](https://github.com/fiskurgit/Schroeder) or an [installable package for Mac](https://drive.google.com/open?id=1A-tzkwd0ce5_O0g8U3tDQ641fObSap1M) on @fiskfamilij's [GitHub](https://github.com/fiskurgit/Schroeder)
 
-### Simple Dart Example
-[Source code](Dart/line_us.dart) for a very simple example can be downloaded from [here](../../raw/master/Dart/line_us.dart). You'll need [Dart](https://www.dartlang.org/) installed.
-
-### Simple SVG Plotter by Michael Zöllner
+### SVG Plotter by Michael Zöllner
 Great little app to plot your SVG files directly to Line-us. Available as [installers for Mac and Windows](https://github.com/ixd-hof/LineUs_SVG/releases) or [source](https://github.com/ixd-hof/LineUs_SVG) with instructions on [Michael's GitHub](https://github.com/ixd-hof/LineUs_SVG).
 
-## Libraries
+## Libraries to make programming easy
 ### Javascript Library by Beardicus
 If you're thinking of writing some Javascript you should definitely check out this library as it will make your life *much* easier. It handles connection, queueing and all of the things you really don't want to do yourself. Works in the browser as well as with Node. Everything you need is at [Beardicus's GitHub](https://github.com/beardicus/line-us)
 
 ### PHP Library by fxmorin
 A library created by fxmorin to allow you to use your Line-us with PHP. Available at [fxmorin's GitHub](https://github.com/fxmorin/line-us)
 
-## Protocol Details
+## Protocol details for people who want to know how it all works
 ### Introduction
 As of firmware 3.0.0 Line-us offers a webscokets API as well as the original TCP Sockets API. All of the commands and responses are the same across both of the APIs, but there are a small number of commands that are not avaialble in the websockets API for security reasons (for example `M587` to set WiFi details). Details are in the [GCode Specification Document](Documentation/GCodeSpec.md).
 
