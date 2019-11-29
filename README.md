@@ -22,7 +22,7 @@ The simplest way to get started is to try one of the examples below.
 - [SVG Plotter for Line-us by Michael Zöllner](#svg-plotter-by-michael-zöllner)
 
 #### Libraries to make programming easy
-- [Official Python module for Line-us](#ßofficial-python-module-for-line-us)
+- [Official Python module for Line-us](#official-python-module-for-line-us)
 - [Javascript Library by Beardicus](#javascript-library-by-beardicus)
 - [PHP Library by fxmorin](#php-library-by-fxmorin)
 
