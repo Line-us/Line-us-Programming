@@ -80,7 +80,7 @@ Write commands in JavaScript and preview the drawing in your browser before send
 Very nice Java app available as [source](https://github.com/fiskurgit/Schroeder) or an [installable package for Mac](https://drive.google.com/open?id=1A-tzkwd0ce5_O0g8U3tDQ641fObSap1M) on @fiskfamilij's [GitHub](https://github.com/fiskurgit/Schroeder)
 
 ### SVG Plotter by Michael Zöllner
-Great little app to plot your SVG files directly to Line-us. Available as [installers for Mac and Windows](https://github.com/ixd-hof/LineUs_SVG/releases) or [source](https://github.com/ixd-hof/LineUs_SVG) with instructions on [Michael's GitHub](https://github.com/ixd-hof/LineUs_SVG).
+Great little app to plot your SVG files directly to Line-us.  Available as [installers for Mac and Windows](https://github.com/ixd-hof/LineUs_SVG/releases) or [source](https://github.com/ixd-hof/LineUs_SVG) with instructions on [Michael's GitHub](https://github.com/ixd-hof/LineUs_SVG). **Note you may need to change the Line-us name in the App - hit the 'a' key and enter `line-us.local` if you have problems connecting.**
 
 ## Libraries to make programming easy
 
