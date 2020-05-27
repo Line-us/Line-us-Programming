@@ -95,7 +95,7 @@ If you're thinking of writing some Javascript you should definitely check out th
 A library created by fxmorin to allow you to use your Line-us with PHP. Available at [fxmorin's GitHub](https://github.com/fxmorin/line-us)
 
 ### R Library by benjaminschwetz
-A library for R, built on the Python library.
+A library for R, built on the Python library. Available at [benjaminschwetz's GitHub](https://github.com/benjaminschwetz/rlineus)
 
 ## Protocol details for people who want to know how it all works
 ### Introduction
