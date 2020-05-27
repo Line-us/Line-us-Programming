@@ -25,6 +25,7 @@ The simplest way to get started is to try one of the examples below.
 - [Official Python module for Line-us](#official-python-module-for-line-us)
 - [Javascript Library by Beardicus](#javascript-library-by-beardicus)
 - [PHP Library by fxmorin](#php-library-by-fxmorin)
+- [R Library by benjaminschwetz](#r-library-by-benjaminschwetz)
 
 #### Protocol details for people who want to know how it all works
 - [Making a connection](#making-a-connection)
@@ -92,6 +93,9 @@ If you're thinking of writing some Javascript you should definitely check out th
 
 ### PHP Library by fxmorin
 A library created by fxmorin to allow you to use your Line-us with PHP. Available at [fxmorin's GitHub](https://github.com/fxmorin/line-us)
+
+### R Library by benjaminschwetz
+A library for R, built on the Python library.
 
 ## Protocol details for people who want to know how it all works
 ### Introduction
