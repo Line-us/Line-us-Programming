@@ -20,6 +20,7 @@ The simplest way to get started is to try one of the examples below.
 - [Line-us JS Kit created by funwithtriangles](#line-us-js-kit)
 - [Java Generative app by @fiskdebug](#java-generative-app-by-fiskdebug)
 - [SVG Plotter for Line-us by Michael Zöllner](#svg-plotter-by-michael-zöllner)
+- [Coordinate and control multiple Line-us by Markus Selmke](#coordinate-and-control-multiple-line-us)
 
 #### Libraries to make programming easy
 - [Official Python module for Line-us](#official-python-module-for-line-us)
@@ -82,6 +83,9 @@ Very nice Java app available as [source](https://github.com/fiskurgit/Schroeder)
 
 ### SVG Plotter by Michael Zöllner
 Great little app to plot your SVG files directly to Line-us.  Available as [installers for Mac and Windows](https://github.com/ixd-hof/LineUs_SVG/releases) or [source](https://github.com/ixd-hof/LineUs_SVG) with instructions on [Michael's GitHub](https://github.com/ixd-hof/LineUs_SVG). **Note you may need to change the Line-us name in the App - hit the 'a' key and enter `line-us.local` if you have problems connecting.**
+
+### Coordinate and control multiple Line-us
+Processing code developed by Markus Selmke to coordinate the motion of multiple Line-us. The code is [available on his GitHub](https://github.com/MarkusSelmke/MultipleLineUs)
 
 ## Libraries to make programming easy
 
