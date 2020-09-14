@@ -85,7 +85,7 @@ Very nice Java app available as [source](https://github.com/fiskurgit/Schroeder)
 Great little app to plot your SVG files directly to Line-us.  Available as [installers for Mac and Windows](https://github.com/ixd-hof/LineUs_SVG/releases) or [source](https://github.com/ixd-hof/LineUs_SVG) with instructions on [Michael's GitHub](https://github.com/ixd-hof/LineUs_SVG). **Note you may need to change the Line-us name in the App - hit the 'a' key and enter `line-us.local` if you have problems connecting.**
 
 ### Coordinate and control multiple Line-us
-Processing code developed by Markus Selmke to coordinate the motion of multiple Line-us. The code is [available on his GitHub](https://github.com/MarkusSelmke/MultipleLineUs)
+Processing code developed by Markus Selmke to coordinate the motion of multiple Line-us. The program lets you control 4 Line-Us devices simultaneously in a single coordinate system, preventing the devices collision by a bounding box method. The code is [available on his GitHub](https://github.com/MarkusSelmke/MultipleLineUs)
 
 ## Libraries to make programming easy
 
