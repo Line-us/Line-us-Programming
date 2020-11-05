@@ -6,12 +6,25 @@ class LineUs:
     """An example class to show how to use the Line-us API"""
 
     def __init__(self, line_us_name):
+        """
+        Initialize a connection.
+
+        Args:
+            self: (todo): write your description
+            line_us_name: (str): write your description
+        """
         self.__line_us = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.__line_us.connect((line_us_name, 1337))
         self.__connected = True
         self.__hello_message = self.__read_response()
 
     def get_hello_string(self):
+        """
+        : return : class :.
+
+        Args:
+            self: (todo): write your description
+        """
         if self.__connected:
             return self.__hello_message.decode()
         else:
