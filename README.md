@@ -34,7 +34,7 @@ The simplest way to get started is to try one of the examples below.
 - [Responses from Line-us](#responses-from-line-us)
 - [Timing](#timing)
 - [Co-ordinate System](#co-ordinate-system)
-- [Connecting Line-us to your Wifi using telent](#connecting-line-us-to-your-wifi-using-telnet)
+- [Connecting Line-us to your Wifi using telnet](#connecting-line-us-to-your-wifi-using-telnet)
 - [CAUTION for firmware 1.0.1 and lower](#caution-for-firmware-101-and-lower)
 
 ## Simple Example code to get you started with programming
@@ -127,7 +127,7 @@ If a GCode command that moves the arm is sent to Line-us while the arm is still 
 ### Co-ordinate System
 Line-us GCode commands use 'machine co-ordinates'. The origin point (0, 0) for the co-ordinate system is at the centre point of the servo shafts, and GCode commands use drawing units (100 drawing units is approximately 5mm). The home point for the arm is (1000, 1000). The z axis is the pen height; 0 is down and 1000 is up. The shape if the drawing area is not rectangular. See the [Line-us Drawing Area Diagram](Documentation/LineUsDrawingArea.pdf) for details. If a GCode for a movement outside of the drawing is sent Line-us will move to something approximating the closest it can get to that point while still remaining within the drawing area and lift the pen.
 
-### Connecting Line-us to your Wifi using telent
+### Connecting Line-us to your Wifi using telnet
 Most people will use the Line-us App to connect their Line-us to WiFi, but were's the fun in that! The commands to configure WiFi are GCode commands just like everything else so you're able to connect Line-us to WiFi by connecting to Line-us using telent and issuing the connect command. Firstly, make sure you have a telnet client installed on your computer. Linux will probably come with it already installed, but MacOS and Windows don't. For Windows you can install via the Control Panel/Programs/Turn windows features on and off and then look for Telnet client. On Mac the simplest is via Homebrew. If you have homebrew installed then it's just `brew install telnet`.
 
 Once you have telnet installed then put your Line-us into Setup mode by pressing the button until the light flashes red. Then you can connect your computer to the WiFi network Line-us-Setup. Then you can connect to Line-us using telnet; on Linux and Mac you can connect at the command prompt using `telnet 192.168.4.1 1337`. If you're running the telnet app in Windows it's `open 192.168.4.1 1337`. After a few seconds Line-us will then wave it's arm and you'll see the `hello` message. At this point you can send any GCode command you like (see the Sending GCCode section above), but the command to connect to your WiFi is `M587 Smy-ssid P"my-password"`. Once you've sent the command Line-us will disconect from your computer abd try to connect to your WiFi using the ssid and password used in the command. If it's successful the light will turn to solid blue. If it can't connect for any reason (perhaps an incorrect password) the light will flash red again and you can re-connect your computer and try again (if the light flashes blue then hold the button until it flashes red again). To end the telnet session type `ctrl ]` to get back to the telnet prompt and then type close
